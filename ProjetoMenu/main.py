@@ -1,12 +1,15 @@
 import tkinter as tk
+from tkinter import PhotoImage
 import random
 
+
 janela = tk.Tk()
+janela.iconbitmap('icone.ico')
 janela.rowconfigure(0, weight=1)
 janela.columnconfigure([0,1], weight=1)
 
-janela.geometry("300x200")
-
+janela.geometry("400x260")
+janela.title("Gerador de numeros")
 
 def mega_sena():
     lista = []
@@ -17,19 +20,16 @@ def mega_sena():
     tema["text"] = lista
 
 
-tema = tk.Label(text="Sorteio da Mega-sena", fg="green", bg="white")
+tema = tk.Label(text="Sorteio da Mega-Sena", fg="#1C1C1C", bg="#aef5c3")
 tema.grid(row=0, column=0, columnspan=2, sticky="NSEW")
-tema.configure(font=("Cooper Black", 22, "italic" ))
+tema.configure(font=("Cooper Black", 20, "bold" ))
 
 
 
 mensagem = tk.Label()
 mensagem.grid(row=3, column=1, columnspan=2, sticky="NSEW")
 
-botao = tk.Button(janela, text="Gerar um numero da Mega-Sena", command=mega_sena)
-botao.grid(row=2, columnspan=2)
-
-
+botao = tk.Button(janela, text="Gerar numeros para Mega-Sena", command=mega_sena, width=80, height=2)
+botao.grid(row=3, column=1, columnspan=2)
 
 janela.mainloop()
-
